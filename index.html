@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Kabupaten Tangerang - Portal Pembelajaran</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.2rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">📚</span>
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-800">Sejarah Kabupaten Tangerang</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <button onclick="showPage('beranda')" class="nav-btn text-blue-600 font-medium hover:text-blue-800 transition-colors">Beranda</button>
+                    <button onclick="showPage('tujuan')" class="nav-btn text-gray-600 hover:text-blue-600 transition-colors">Tujuan</button>
+                    <button onclick="showPage('materi')" class="nav-btn text-gray-600 hover:text-blue-600 transition-colors">Materi</button>
+                    <button onclick="showPage('asesmen')" class="nav-btn text-gray-600 hover:text-blue-600 transition-colors">Asesmen</button>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-blue-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <button onclick="showPage('beranda')" class="block w-full text-left py-2 text-blue-600 font-medium">Beranda</button>
+                <button onclick="showPage('tujuan')" class="block w-full text-left py-2 text-gray-600">Tujuan</button>
+                <button onclick="showPage('materi')" class="block w-full text-left py-2 text-gray-600">Materi</button>
+                <button onclick="showPage('asesmen')" class="block w-full text-left py-2 text-gray-600">Asesmen</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="pageContent">
+        <!-- Beranda Page -->
+        <div id="beranda" class="page-content">
+            <!-- Hero Section -->
+            <section class="hero-bg text-white py-20">
+                <div class="max-w-6xl mx-auto px-4 text-center">
+                    <div class="fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            🏛️ Sejarah Kabupaten Tangerang
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 opacity-90">
+                            Menjelajahi Perjalanan Sejarah Tanah Benteng dari Masa ke Masa
+                        </p>
+                        <button onclick="showPage('materi')" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                            Mulai Belajar 🚀
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="py-16">
+                <div class="max-w-6xl mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Fitur Pembelajaran</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-hover bg-white p-6 rounded-xl shadow-lg text-center">
+                            <div class="text-4xl mb-4">🎯</div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Tujuan Pembelajaran</h3>
+                            <p class="text-gray-600">Pembelajaran terarah dengan tujuan yang spesifik dan terukur</p>
+                        </div>
+                        <div class="card-hover bg-white p-6 rounded-xl shadow-lg text-center">
+                            <div class="text-4xl mb-4">📖</div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Materi Lengkap</h3>
+                            <p class="text-gray-600">Konten sejarah yang komprehensif dan mudah dipahami</p>
+                        </div>
+                        <div class="card-hover bg-white p-6 rounded-xl shadow-lg text-center">
+                            <div class="text-4xl mb-4">✅</div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Asesmen Interaktif</h3>
+                            <p class="text-gray-600">Evaluasi pembelajaran dengan kuis yang menarik</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="bg-blue-50 py-16">
+                <div class="max-w-6xl mx-auto px-4">
+                    <div class="grid md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-blue-600 mb-2">1000+</div>
+                            <div class="text-gray-600">Tahun Sejarah</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-600 mb-2">5</div>
+                            <div class="text-gray-600">Periode Sejarah</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-600 mb-2">15</div>
+                            <div class="text-gray-600">Kecamatan</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-blue-600 mb-2">3.5M</div>
+                            <div class="text-gray-600">Penduduk</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tujuan Page -->
+        <div id="tujuan" class="page-content hidden">
+            <section class="py-16">
+                <div class="max-w-4xl mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">🎯 Tujuan Pembelajaran</h1>
+                        <p class="text-xl text-gray-600">Kompetensi yang akan dicapai setelah mempelajari sejarah Kabupaten Tangerang</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-semibold mb-6 text-blue-600">📚 Tujuan Umum</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <span class="text-gray-700">Memahami perkembangan sejarah Kabupaten Tangerang dari masa ke masa</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <span class="text-gray-700">Menganalisis faktor-faktor yang mempengaruhi perkembangan daerah</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <span class="text-gray-700">Menghargai warisan sejarah dan budaya lokal</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-semibold mb-6 text-purple-600">🎯 Tujuan Khusus</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <span class="text-gray-700">Menjelaskan asal-usul nama Tangerang</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <span class="text-gray-700">Mengidentifikasi tokoh-tokoh penting dalam sejarah Tangerang</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <span class="text-gray-700">Menganalisis perkembangan ekonomi dan sosial</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-4">🏆 Kompetensi Dasar</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-2">KD 3.5</h4>
+                                <p class="opacity-90">Menganalisis karakteristik kehidupan masyarakat, pemerintahan, dan kebudayaan pada masa kerajaan-kerajaan Islam di Indonesia</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">KD 4.5</h4>
+                                <p class="opacity-90">Menyajikan hasil analisis karakteristik kehidupan masyarakat, pemerintahan, dan kebudayaan pada masa kerajaan-kerajaan Islam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-8">
+                        <button onclick="showPage('materi')" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+                            Lanjut ke Materi 📖
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Materi Page -->
+        <div id="materi" class="page-content hidden">
+            <section class="py-16">
+                <div class="max-w-6xl mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">📖 Materi Pembelajaran</h1>
+                        <p class="text-xl text-gray-600">Sejarah Kabupaten Tangerang: Dari Masa Lampau hingga Kini</p>
+                    </div>
+
+                    <!-- Video Section -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                        <h2 class="text-2xl font-semibold mb-6 text-center">🎥 Video Pembelajaran</h2>
+                        <div class="bg-gray-800 rounded-lg aspect-video flex items-center justify-center">
+                             <iframe class="w-full h-full rounded-lg"
+                                src="https://www.youtube.com/embed/BlNaGdp5Wz4"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Timeline Sejarah -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                        <h2 class="text-2xl font-semibold mb-8 text-center">⏰ Timeline Sejarah Tangerang</h2>
+                        <div class="space-y-8">
+                            <div class="timeline-item">
+                                <div class="bg-blue-50 p-6 rounded-lg">
+                                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Abad ke-16 - Awal Mula</h3>
+                                    <p class="text-gray-700 mb-3">Tangerang mulai dikenal sebagai daerah pertanian dan perdagangan. Nama "Tangerang" berasal dari kata "Tengger" yang berarti tempat tinggi.</p>
+                                    <div class="text-4xl">🏛️</div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="bg-green-50 p-6 rounded-lg">
+                                    <h3 class="text-xl font-semibold text-green-600 mb-2">Masa Kolonial Belanda</h3>
+                                    <p class="text-gray-700 mb-3">Tangerang menjadi bagian penting dalam sistem pemerintahan kolonial Belanda, terutama sebagai daerah penyangga Batavia.</p>
+                                    <div class="text-4xl">🏴</div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="bg-red-50 p-6 rounded-lg">
+                                    <h3 class="text-xl font-semibold text-red-600 mb-2">Masa Kemerdekaan</h3>
+                                    <p class="text-gray-700 mb-3">Setelah kemerdekaan Indonesia, Tangerang berkembang pesat sebagai daerah industri dan pemukiman.</p>
+                                    <div class="text-4xl">🇮🇩</div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="bg-purple-50 p-6 rounded-lg">
+                                    <h3 class="text-xl font-semibold text-purple-600 mb-2">Era Modern</h3>
+                                    <p class="text-gray-700 mb-3">Tangerang menjadi salah satu kabupaten terbesar di Indonesia dengan perkembangan industri dan teknologi yang pesat.</p>
+                                    <div class="text-4xl">🏭</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Materi Detail -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-white rounded-xl shadow-lg p-8">
+                            <h3 class="text-2xl font-semibold mb-6 text-blue-600">🏛️ Asal Usul Nama</h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">Nama "Tangerang" memiliki beberapa versi asal-usul:</p>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li><strong>Tengger:</strong> Berasal dari kata "tengger" yang berarti tempat tinggi</li>
+                                    <li><strong>Tanger:</strong> Dari bahasa Sunda yang berarti tanda atau penanda</li>
+                                    <li><strong>Tang-Hyang:</strong> Dari bahasa Tionghoa yang berarti "tempat dewa"</li>
+                                </ul>
+                                <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                                    <p class="text-sm text-blue-800"><strong>Fakta Menarik:</strong> Tangerang dikenal dengan sebutan "Kota Benteng" karena banyaknya benteng peninggalan masa kolonial.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg p-8">
+                            <h3 class="text-2xl font-semibold mb-6 text-green-600">👑 Tokoh Bersejarah</h3>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-green-500 pl-4">
+                                    <h4 class="font-semibold text-gray-800">Pangeran Jayakarta</h4>
+                                    <p class="text-gray-600 text-sm">Penguasa Jayakarta yang berperan dalam sejarah awal Tangerang</p>
+                                </div>
+                                <div class="border-l-4 border-green-500 pl-4">
+                                    <h4 class="font-semibold text-gray-800">Raden Fatahillah</h4>
+                                    <p class="text-gray-600 text-sm">Tokoh penyebar Islam di wilayah Tangerang dan sekitarnya</p>
+                                </div>
+                                <div class="border-l-4 border-green-500 pl-4">
+                                    <h4 class="font-semibold text-gray-800">K.H. Tb. Syech</h4>
+                                    <p class="text-gray-600 text-sm">Ulama besar yang berperan dalam perkembangan Islam di Tangerang</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Perkembangan Modern -->
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl p-8 mb-8">
+                        <h3 class="text-2xl font-semibold mb-6">🚀 Tangerang Modern</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🏭</div>
+                                <h4 class="font-semibold mb-2">Pusat Industri</h4>
+                                <p class="text-sm opacity-90">Kawasan industri terbesar di Indonesia</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">✈️</div>
+                                <h4 class="font-semibold mb-2">Bandara Soekarno-Hatta</h4>
+                                <p class="text-sm opacity-90">Gerbang utama Indonesia</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🏢</div>
+                                <h4 class="font-semibold mb-2">Kota Satelit</h4>
+                                <p class="text-sm opacity-90">Penyangga ibu kota Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button onclick="showPage('asesmen')" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors">
+                            Lanjut ke Asesmen ✅
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Asesmen Page -->
+        <div id="asesmen" class="page-content hidden">
+            <section class="py-16">
+                <div class="max-w-4xl mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">✅ Asesmen Pembelajaran</h1>
+                        <p class="text-xl text-gray-600">Uji pemahaman Anda tentang sejarah Kabupaten Tangerang</p>
+                    </div>
+
+                    <div id="quizContainer" class="bg-white rounded-xl shadow-lg p-8">
+                        <div id="quizHeader" class="mb-8">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-2xl font-semibold text-gray-800">Kuis Sejarah Tangerang</h2>
+                                <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">
+                                    <span id="questionCounter">Soal 1 dari 5</span>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+                            </div>
+                        </div>
+
+                        <div id="questionContainer">
+                            <div class="mb-6">
+                                <h3 id="questionText" class="text-xl font-medium text-gray-800 mb-6">
+                                    Apa asal-usul nama "Tangerang" menurut salah satu versi sejarah?
+                                </h3>
+                                <div id="optionsContainer" class="space-y-3">
+                                    <button class="option-btn w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors" data-answer="a">
+                                        A. Berasal dari kata "tengger" yang berarti tempat tinggi
+                                    </button>
+                                    <button class="option-btn w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors" data-answer="b">
+                                        B. Berasal dari nama seorang raja
+                                    </button>
+                                    <button class="option-btn w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors" data-answer="c">
+                                        C. Berasal dari nama sungai
+                                    </button>
+                                    <button class="option-btn w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors" data-answer="d">
+                                        D. Berasal dari nama buah
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="quizNavigation" class="flex justify-between items-center mt-8">
+                            <button id="prevBtn" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition-colors" disabled>
+                                ← Sebelumnya
+                            </button>
+                            <button id="nextBtn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                Selanjutnya →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results Section (Hidden initially) -->
+                    <div id="resultsContainer" class="hidden bg-white rounded-xl shadow-lg p-8">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">🎉</div>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Kuis Selesai!</h2>
+                            <div class="text-2xl font-semibold text-blue-600 mb-6">
+                                Skor Anda: <span id="finalScore">0</span>/5
+                            </div>
+                            <div id="scoreMessage" class="text-lg text-gray-600 mb-8"></div>
+                            <div class="space-x-4">
+                                <button onclick="restartQuiz()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                                    🔄 Ulangi Kuis
+                                </button>
+                                <button onclick="showPage('beranda')" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                                    🏠 Kembali ke Beranda
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">📚 Sejarah Tangerang</h3>
+                    <p class="text-gray-300">Platform pembelajaran sejarah interaktif untuk siswa SMA kelas 10</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">📖 Materi</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Asal-usul Tangerang</li>
+                        <li>• Timeline Sejarah</li>
+                        <li>• Tokoh Bersejarah</li>
+                        <li>• Perkembangan Modern</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">🎯 Pembelajaran</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Tujuan Pembelajaran</li>
+                        <li>• Materi Interaktif</li>
+                        <li>• Asesmen Online</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Portal Pembelajaran Sejarah Tangerang. Dibuat oleh Kelompok 4 Kab. Tangerang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Quiz Data
+        const quizData = [
+            {
+                question: "Apa asal-usul nama 'Tangerang' menurut salah satu versi sejarah?",
+                options: [
+                    "Berasal dari kata 'tengger' yang berarti tempat tinggi",
+                    "Berasal dari nama seorang raja",
+                    "Berasal dari nama sungai",
+                    "Berasal dari nama buah"
+                ],
+                correct: 0
+            },
+            {
+                question: "Siapa tokoh yang berperan dalam penyebaran Islam di wilayah Tangerang?",
+                options: [
+                    "Pangeran Diponegoro",
+                    "Raden Fatahillah",
+                    "Sultan Agung Tirtayasa",
+                    "Pangeran Antasari"
+                ],
+                correct: 1
+            },
+            {
+                question: "Tangerang dikenal dengan sebutan apa?",
+                options: [
+                    "Kota Hujan",
+                    "Kota Benteng",
+                    "Kota Bunga",
+                    "Kota Seribu Pulau"
+                ],
+                correct: 1
+            },
+            {
+                question: "Apa yang menjadi ciri khas perkembangan Tangerang di era modern?",
+                options: [
+                    "Pusat pertanian",
+                    "Pusat industri dan teknologi",
+                    "Pusat pariwisata",
+                    "Pusat pendidikan"
+                ],
+                correct: 1
+            },
+            {
+                question: "Bandara internasional yang terletak di Tangerang adalah?",
+                options: [
+                    "Bandara Halim Perdanakusuma",
+                    "Bandara Soekarno-Hatta",
+                    "Bandara Husein Sastranegara",
+                    "Bandara Juanda"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+        let score = 0;
+
+        // Navigation Functions
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.remove('hidden');
+            
+            // Update navigation
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('text-blue-600', 'font-medium');
+                btn.classList.add('text-gray-600');
+            });
+            
+            // Highlight active nav
+            event.target.classList.remove('text-gray-600');
+            event.target.classList.add('text-blue-600', 'font-medium');
+            
+            // Close mobile menu
+            document.getElementById('mobileMenu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Quiz Functions
+        function loadQuestion() {
+            const question = quizData[currentQuestion];
+            document.getElementById('questionText').textContent = question.question;
+            document.getElementById('questionCounter').textContent = `Soal ${currentQuestion + 1} dari ${quizData.length}`;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'option-btn w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors';
+                button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+                button.onclick = () => selectAnswer(index);
+                optionsContainer.appendChild(button);
+            });
+            
+            // Update progress bar
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentQuestion === 0;
+            document.getElementById('nextBtn').textContent = currentQuestion === quizData.length - 1 ? 'Selesai' : 'Selanjutnya →';
+        }
+
+        function selectAnswer(answerIndex) {
+            // Remove previous selection
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('border-blue-500', 'bg-blue-100');
+            });
+            
+            // Highlight selected answer
+            const selectedBtn = document.querySelectorAll('.option-btn')[answerIndex];
+            selectedBtn.classList.add('border-blue-500', 'bg-blue-100');
+            
+            // Store answer
+            userAnswers[currentQuestion] = answerIndex;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function finishQuiz() {
+            // Calculate score
+            score = 0;
+            for (let i = 0; i < quizData.length; i++) {
+                if (userAnswers[i] === quizData[i].correct) {
+                    score++;
+                }
+            }
+            
+            // Show results
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('resultsContainer').classList.remove('hidden');
+            document.getElementById('finalScore').textContent = score;
+            
+            // Show message based on score
+            const messageElement = document.getElementById('scoreMessage');
+            if (score === 5) {
+                messageElement.textContent = "Sempurna! Anda menguasai materi dengan sangat baik! 🌟";
+                messageElement.className = "text-lg text-green-600 mb-8";
+            } else if (score >= 3) {
+                messageElement.textContent = "Bagus! Anda memahami sebagian besar materi. 👍";
+                messageElement.className = "text-lg text-blue-600 mb-8";
+            } else {
+                messageElement.textContent = "Perlu belajar lagi. Silakan ulangi materi dan coba lagi. 📚";
+                messageElement.className = "text-lg text-orange-600 mb-8";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            userAnswers = [];
+            score = 0;
+            document.getElementById('quizContainer').classList.remove('hidden');
+            document.getElementById('resultsContainer').classList.add('hidden');
+            loadQuestion();
+        }
+
+        // Event Listeners
+        document.getElementById('nextBtn').onclick = nextQuestion;
+        document.getElementById('prevBtn').onclick = prevQuestion;
+
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadQuestion();
+        });
+
+        // Handle window resize for mobile menu
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f75e07e7f0fdfa',t:'MTc1NzkzMTM3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
